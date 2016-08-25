@@ -4737,7 +4737,12 @@ clfftStatus FFTPlan::SetEnvelope ()
 				envelope.limit_Size[u] = std::min<size_t> (envelope.limit_Size[u], temp[u]);
 			}
 		}
-
+		envelope.limit_LocalMemSize = 32768;
+		envelope.limit_Dimensions = 3;
+		envelope.limit_WorkGroupSize = 256;
+		envelope.limit_Size[0] = 256;
+		envelope.limit_Size[1] = 256;
+		envelope.limit_Size[2] = 256;
 		BUG_CHECK (envelope.limit_LocalMemSize >= 1024)
 	} while (0);
 
