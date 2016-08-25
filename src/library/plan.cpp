@@ -1226,7 +1226,7 @@ clfftStatus	clfftBakePlan( clfftPlanHandle plHandle, cl_uint numQueues, cl_comma
 
 				// For real transforms
 				// Special case optimization with 5-step algorithm
-				if( (fftPlan->inputLayout == CLFFT_REAL) && IsPo2(fftPlan->length[0])
+				if( 0 && (fftPlan->inputLayout == CLFFT_REAL) && IsPo2(fftPlan->length[0])
 					&& (fftPlan->length.size() == 1)
 					&& (fftPlan->inStride[0] == 1) && (fftPlan->outStride[0] == 1)
 					&& (fftPlan->length[0] > 4096) && (fftPlan->length.size() == 1) )
